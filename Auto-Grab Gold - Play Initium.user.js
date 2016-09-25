@@ -11,11 +11,10 @@
 
 (function() {
     'use strict';
-
     // Check for gold
-    $(window).load(function() {
+     $(window).load(function() {
         //ajax is fun, not sure of how to scan for gold without doing it every tenth of a second.
-        setInterval(function(){            
+        var x = setInterval(function(){            
         try{
             var goldLink = $('a[onclick*="collectDogecoin"]');
             if ( $(goldLink).attr("onclick") !== undefined)
@@ -37,6 +36,7 @@
 
         catch(e)
         {
+            clearInterval(x);
             alert("Error collecting gold! Send to @beauiv_ : " + e.message);
         }
             },100);
