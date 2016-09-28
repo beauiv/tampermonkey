@@ -23,7 +23,7 @@
                 if( !$(goldLink).text().includes("Gold retrieved."))
                 {
                 $(goldLink).click();
-                $(goldLink).text("Gold retrieved.");
+                $(goldLink).text($(goldLink).text() + " -- Gold retrieved.");
                 }
             }
             //else no gold is visible, don't try to get it
